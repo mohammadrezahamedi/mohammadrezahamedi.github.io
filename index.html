@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohammad Reza Hamedi — Senior Unity / VR Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0f14;
+    --panel:#14171f;
+    --panel-2:#1a1e28;
+    --line:#262b38;
+    --ink:#eef1f6;
+    --muted:#98a0b3;
+    --accent:#4dd4c4;
+    --accent-warm:#f0b84a;
+    --display:'Space Grotesk',sans-serif;
+    --body:'Inter',sans-serif;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:110px 0 70px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40%;right:-10%;
+    width:600px;height:600px;
+    background:radial-gradient(circle,rgba(77,212,196,.14),transparent 62%);
+    pointer-events:none;
+  }
+  .hero-role{
+    font-family:var(--display);
+    font-size:13px;
+    letter-spacing:.14em;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-size:clamp(38px,6vw,68px);
+    line-height:1.02;
+    font-weight:700;
+    letter-spacing:-.02em;
+    max-width:14ch;
+    margin-bottom:26px;
+  }
+  .hero p{
+    color:var(--muted);
+    font-size:clamp(16px,2.2vw,19px);
+    max-width:58ch;
+    margin-bottom:38px;
+  }
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:15px;
+    padding:13px 24px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    transition:transform .15s ease,border-color .15s ease,background .15s ease;
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--accent);color:#06221f;border-color:var(--accent)}
+  .btn-primary:hover{background:#63e0d0}
+  .btn-ghost:hover{border-color:var(--accent)}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat{background:var(--bg);padding:34px 24px;text-align:center}
+  .stat b{
+    font-family:var(--display);
+    display:block;
+    font-size:clamp(26px,4vw,40px);
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:-.02em;
+  }
+  .stat span{font-size:13px;color:var(--muted);letter-spacing:.03em}
+
+  /* ---------- SECTION HEADER ---------- */
+  .section{padding:74px 0}
+  .section-head{margin-bottom:40px}
+  .section-head h2{
+    font-family:var(--display);
+    font-size:clamp(26px,4vw,38px);
+    font-weight:700;
+    letter-spacing:-.02em;
+  }
+  .section-head .sub{color:var(--muted);margin-top:8px;max-width:56ch}
+
+  /* ---------- GAME CARDS ---------- */
+  .games{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:border-color .18s ease,transform .18s ease;
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .card-media{
+    position:relative;
+    aspect-ratio:16/9;
+    background:var(--panel-2);
+    display:flex;align-items:center;justify-content:center;
+    border-bottom:1px solid var(--line);
+  }
+  .card-media iframe{width:100%;height:100%;border:0;display:block}
+  /* Placeholder shown until you paste a real video/image */
+  .media-placeholder{
+    text-align:center;color:var(--muted);font-size:13px;padding:20px;line-height:1.5;
+  }
+  .media-placeholder .dot{
+    font-family:var(--display);font-size:11px;letter-spacing:.1em;
+    color:var(--accent-warm);display:block;margin-bottom:8px;font-weight:600;
+  }
+  .card-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card-tag{
+    font-family:var(--display);font-size:12px;letter-spacing:.06em;
+    color:var(--accent);font-weight:600;margin-bottom:10px;
+  }
+  .card-body h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px}
+  .card-body p{color:var(--muted);font-size:15px;flex:1;margin-bottom:16px}
+  .card-stat{
+    font-family:var(--display);font-size:14px;font-weight:600;
+    color:var(--accent-warm);margin-bottom:16px;
+  }
+  .card-links{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{
+    font-size:13px;font-weight:600;padding:8px 14px;border-radius:8px;
+    border:1px solid var(--line);color:var(--muted);transition:all .15s ease;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--ink)}
+
+  /* ---------- EXPERIENCE ---------- */
+  .exp-list{display:flex;flex-direction:column;gap:0}
+  .exp{
+    display:grid;grid-template-columns:200px 1fr;gap:30px;
+    padding:28px 0;border-top:1px solid var(--line);
+  }
+  .exp:last-child{border-bottom:1px solid var(--line)}
+  .exp-meta .co{font-family:var(--display);font-weight:700;font-size:17px}
+  .exp-meta .yr{color:var(--muted);font-size:14px;margin-top:4px}
+  .exp-body .role{font-weight:600;font-size:16px;margin-bottom:8px}
+  .exp-body p{color:var(--muted);font-size:15px}
+
+  /* ---------- SKILLS ---------- */
+  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .skill-block{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .skill-block h4{font-family:var(--display);font-size:15px;color:var(--accent);margin-bottom:12px;font-weight:600}
+  .skill-block p{font-size:14px;color:var(--muted)}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    text-align:center;padding:90px 0;border-top:1px solid var(--line);
+    background:linear-gradient(180deg,transparent,rgba(77,212,196,.04));
+  }
+  .contact h2{font-family:var(--display);font-size:clamp(28px,5vw,44px);font-weight:700;margin-bottom:18px;letter-spacing:-.02em}
+  .contact p{color:var(--muted);margin-bottom:32px}
+  .contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  footer{padding:30px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+
+  @media (max-width:760px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .games{grid-template-columns:1fr}
+    .exp{grid-template-columns:1fr;gap:10px}
+    .skill-grid{grid-template-columns:1fr}
+    .hero{padding:80px 0 50px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-role">SENIOR UNITY / VR DEVELOPER</div>
+    <h1>I build VR games people actually finish.</h1>
+    <p>8+ years in Unity and C#. 10+ VR titles self-published on the Meta Quest Store, plus mobile hits past 100k installs. I own the full pipeline — concept, prototype, art direction, store-page optimization, release.</p>
+    <div class="cta-row">
+      <!-- TODO: replace # with your Meta Quest developer page or itch.io -->
+      <a class="btn btn-primary" href="#games">View my games</a>
+      <a class="btn btn-ghost" href="mailto:hamedi.mohamadreza@gmail.com">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= STAT STRIP ================= -->
+<section class="stats">
+  <div class="stat"><b>8+</b><span>Years in Unity</span></div>
+  <div class="stat"><b>10+</b><span>VR titles shipped</span></div>
+  <div class="stat"><b>200k</b><span>Users on one title</span></div>
+  <div class="stat"><b>3</b><span>Countries taught</span></div>
+</section>
+
+<!-- ================= GAMES ================= -->
+<section class="section" id="games">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected games</h2>
+      <p class="sub">Self-published on Meta Quest as a solo developer — certification, launch, and live updates handled independently.</p>
+    </div>
+
+    <div class="games">
+
+      <!-- ============ GAME 1 ============ -->
+      <article class="card">
+        <div class="card-media">
+          <!-- TODO: paste YouTube embed here. Example:
+               <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+               Delete the placeholder div below once you add it. -->
+          <div class="media-placeholder">
+            <span class="dot">VIDEO / IMAGE</span>
+            Paste YouTube embed or screenshot here
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">VR HORROR · META QUEST</div>
+          <h3>Between Floors</h3>
+          <p>Anomaly-spotting horror set in an elevator. Spot what's wrong before the doors open.</p>
+          <div class="card-stat"><!-- TODO: add a stat, e.g. "12k wishlists" -->[ add stat ]</div>
+          <div class="card-links">
+            <!-- TODO: paste real links -->
+            <a class="chip" href="#">Meta Quest ↗</a>
+            <a class="chip" href="#">Gameplay video ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ GAME 2 ============ -->
+      <article class="card">
+        <div class="card-media">
+          <div class="media-placeholder">
+            <span class="dot">VIDEO / IMAGE</span>
+            Paste YouTube embed or screenshot here
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">VR · META QUEST</div>
+          <h3>Prison Sim</h3>
+          <p>Survive and scheme inside a VR prison. My strongest-validated concept by wishlist conversion.</p>
+          <div class="card-stat">[ add stat ]</div>
+          <div class="card-links">
+            <a class="chip" href="#">Meta Quest ↗</a>
+            <a class="chip" href="#">Gameplay video ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ GAME 3 ============ -->
+      <article class="card">
+        <div class="card-media">
+          <div class="media-placeholder">
+            <span class="dot">VIDEO / IMAGE</span>
+            Paste YouTube embed or screenshot here
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">VR ACTION · META QUEST</div>
+          <h3>Outlaws Assassin</h3>
+          <p>A western-flavored VR action game. [ short one-line description ]</p>
+          <div class="card-stat">[ add stat ]</div>
+          <div class="card-links">
+            <a class="chip" href="#">Meta Quest ↗</a>
+            <a class="chip" href="#">Gameplay video ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ GAME 4 ============ -->
+      <article class="card">
+        <div class="card-media">
+          <div class="media-placeholder">
+            <span class="dot">VIDEO / IMAGE</span>
+            Paste YouTube embed or screenshot here
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">MOBILE · 4 YEARS LIVE</div>
+          <h3>Backgammon</h3>
+          <p>Classic backgammon grown to ~200k users, sustaining revenue through ad monetization for four years.</p>
+          <div class="card-stat">~200,000 users</div>
+          <div class="card-links">
+            <a class="chip" href="#">Store link ↗</a>
+            <a class="chip" href="#">Video ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ DUPLICATE THIS BLOCK FOR MORE GAMES ============
+      <article class="card">
+        <div class="card-media">
+          <div class="media-placeholder">
+            <span class="dot">VIDEO / IMAGE</span>
+            Paste YouTube embed or screenshot here
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">TAG · PLATFORM</div>
+          <h3>Game Name</h3>
+          <p>One-line description.</p>
+          <div class="card-stat">[ add stat ]</div>
+          <div class="card-links">
+            <a class="chip" href="#">Store ↗</a>
+            <a class="chip" href="#">Video ↗</a>
+          </div>
+        </div>
+      </article>
+      ============================================================ -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="section" style="background:var(--panel)">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp">
+        <div class="exp-meta">
+          <div class="co">B.O Investment 2016</div>
+          <div class="yr">2025 – Present · Canada (Remote)</div>
+        </div>
+        <div class="exp-body">
+          <div class="role">Unity Developer (Freelance)</div>
+          <p>Building a VR app combining real-time AI conversation with an embodied avatar — Reallusion avatars with automated lip-sync, Google Street View inside VR, TTS via Google & ElevenLabs, and in-headset heart-rate biometric feedback.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-meta">
+          <div class="co">JB Studio</div>
+          <div class="yr">2018 – Present · Independent</div>
+        </div>
+        <div class="exp-body">
+          <div class="role">Indie Game Developer</div>
+          <p>Published VR games on Meta Quest and mobile titles on multiple stores. Owned the full pipeline from concept validation to live updates. Grew a backgammon title to ~200k users.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-meta">
+          <div class="co">Circuit Stream</div>
+          <div class="yr">2022 – 2024 · Canada (Remote)</div>
+        </div>
+        <div class="exp-body">
+          <div class="role">XR & Bootcamp Instructor</div>
+          <p>Mentored 50+ students across Canada, the US and Australia through VR/AR and Unity bootcamps, taking them from first principles to shipped portfolio projects.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-meta">
+          <div class="co">Neoki</div>
+          <div class="yr">2022 – 2023 · Sweden (Remote)</div>
+        </div>
+        <div class="exp-body">
+          <div class="role">Senior Unity Developer (Contract)</div>
+          <p>Built a cross-platform metaverse shipping to Android, iOS and WebGL from one Unity codebase. Networked with PUN2, spatial voice with Vivox, avatars with ReadyPlayerMe — 10 concurrent players per room with stable real-time sync.</p>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-meta">
+          <div class="co">Sourena Games (Zula)</div>
+          <div class="yr">2021 – 2022</div>
+        </div>
+        <div class="exp-body">
+          <div class="role">Unity Developer</div>
+          <p>Contributed to Hoomeez, a 3D real-time multiplayer game for PC and mobile — client and server-side Unity development within a production team.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What I work with</h2></div>
+    <div class="skill-grid">
+      <div class="skill-block">
+        <h4>VR / XR</h4>
+        <p>OpenXR, Oculus SDK, Meta Quest publishing, MRTK, passthrough & mixed reality, VR interaction & comfort design.</p>
+      </div>
+      <div class="skill-block">
+        <h4>Programming</h4>
+        <p>C#, SOLID, dependency injection, design patterns (state machine, observer, singleton), decoupled maintainable architecture.</p>
+      </div>
+      <div class="skill-block">
+        <h4>Multiplayer</h4>
+        <p>PUN2, Mirror, LLAPI / Unity Transport, Vivox voice chat, ReadyPlayerMe.</p>
+      </div>
+      <div class="skill-block">
+        <h4>Unity</h4>
+        <p>Engine workflow, asset management, build pipelines, performance profiling for mobile-class hardware, testing & QA.</p>
+      </div>
+      <div class="skill-block">
+        <h4>Game Design</h4>
+        <p>GDD authoring, mechanics, level design, player experience, narrative design, store-page optimization.</p>
+      </div>
+      <div class="skill-block">
+        <h4>Tools</h4>
+        <p>Git, Jira, Trello, Miro, Confluence, Slack, Figma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's build something</h2>
+    <p>Open to VR / Unity contract and full-time work. Based in Muscat (UTC+4), open to relocation.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:hamedi.mohamadreza@gmail.com">hamedi.mohamadreza@gmail.com</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/mohammadreza-hamedi" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/mohammadrezahamedi" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> Mohammad Reza Hamedi · Built with plain HTML on GitHub Pages
+</footer>
+
+<script>
+  // Auto-update footer year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  console.log('Portfolio loaded. TODO markers left in the HTML for links, videos and stats.');
+</script>
+
+</body>
+</html>

@@ -9,184 +9,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0d0f14;
-    --panel:#14171f;
-    --panel-2:#1a1e28;
-    --line:#262b38;
-    --ink:#eef1f6;
-    --muted:#98a0b3;
-    --accent:#4dd4c4;
-    --accent-warm:#f0b84a;
-    --display:'Space Grotesk',sans-serif;
-    --body:'Inter',sans-serif;
-    box-sizing:border-box;
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#0d0f14;--panel:#14171f;--panel-2:#1a1e28;--line:#262b38;
+    --ink:#eef1f6;--muted:#98a0b3;--accent:#4dd4c4;--accent-warm:#f0b84a;
+    --display:'Space Grotesk',sans-serif;--body:'Inter',sans-serif;
+    box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    padding:110px 0 70px;
-    border-bottom:1px solid var(--line);
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    top:-40%;right:-10%;
-    width:600px;height:600px;
-    background:radial-gradient(circle,rgba(77,212,196,.14),transparent 62%);
-    pointer-events:none;
-  }
-  .hero-role{
-    font-family:var(--display);
-    font-size:13px;
-    letter-spacing:.14em;
-    color:var(--accent);
-    font-weight:600;
-    margin-bottom:22px;
-  }
-  .hero h1{
-    font-family:var(--display);
-    font-size:clamp(38px,6vw,68px);
-    line-height:1.02;
-    font-weight:700;
-    letter-spacing:-.02em;
-    max-width:14ch;
-    margin-bottom:26px;
-  }
-  .hero p{
-    color:var(--muted);
-    font-size:clamp(16px,2.2vw,19px);
-    max-width:58ch;
-    margin-bottom:38px;
-  }
+  .hero{position:relative;padding:110px 0 70px;border-bottom:1px solid var(--line);overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-40%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(77,212,196,.14),transparent 62%);pointer-events:none}
+  .hero-role{font-family:var(--display);font-size:13px;letter-spacing:.14em;color:var(--accent);font-weight:600;margin-bottom:22px}
+  .hero h1{font-family:var(--display);font-size:clamp(38px,6vw,68px);line-height:1.02;font-weight:700;letter-spacing:-.02em;max-width:14ch;margin-bottom:26px}
+  .hero p{color:var(--muted);font-size:clamp(16px,2.2vw,19px);max-width:58ch;margin-bottom:38px}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap}
-  .btn{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:15px;
-    padding:13px 24px;
-    border-radius:10px;
-    border:1px solid var(--line);
-    transition:transform .15s ease,border-color .15s ease,background .15s ease;
-    display:inline-flex;align-items:center;gap:9px;
-  }
+  .btn{font-family:var(--display);font-weight:600;font-size:15px;padding:13px 24px;border-radius:10px;border:1px solid var(--line);transition:transform .15s ease,border-color .15s ease,background .15s ease;display:inline-flex;align-items:center;gap:9px}
   .btn:hover{transform:translateY(-2px)}
   .btn-primary{background:var(--accent);color:#06221f;border-color:var(--accent)}
   .btn-primary:hover{background:#63e0d0}
   .btn-ghost:hover{border-color:var(--accent)}
 
-  /* ---------- STAT STRIP ---------- */
-  .stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:1px;
-    background:var(--line);
-    border-bottom:1px solid var(--line);
-  }
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
   .stat{background:var(--bg);padding:34px 24px;text-align:center}
-  .stat b{
-    font-family:var(--display);
-    display:block;
-    font-size:clamp(26px,4vw,40px);
-    font-weight:700;
-    color:var(--ink);
-    letter-spacing:-.02em;
-  }
+  .stat b{font-family:var(--display);display:block;font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--ink);letter-spacing:-.02em}
   .stat span{font-size:13px;color:var(--muted);letter-spacing:.03em}
 
-  /* ---------- SECTION HEADER ---------- */
   .section{padding:74px 0}
-  .section-head{margin-bottom:40px}
-  .section-head h2{
-    font-family:var(--display);
-    font-size:clamp(26px,4vw,38px);
-    font-weight:700;
-    letter-spacing:-.02em;
-  }
+  .section-head{margin-bottom:34px}
+  .section-head h2{font-family:var(--display);font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:-.02em}
   .section-head .sub{color:var(--muted);margin-top:8px;max-width:56ch}
 
-  /* ---------- GAME CARDS ---------- */
+  .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:38px}
+  .tab{font-family:var(--display);font-weight:600;font-size:15px;padding:11px 22px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;transition:all .15s ease}
+  .tab:hover{color:var(--ink);border-color:var(--accent)}
+  .tab.active{background:var(--accent);color:#06221f;border-color:var(--accent)}
+  .tab .count{opacity:.7;font-size:13px;margin-left:6px}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+
   .games{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-  .card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:16px;
-    overflow:hidden;
-    display:flex;flex-direction:column;
-    transition:border-color .18s ease,transform .18s ease;
-  }
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .18s ease,transform .18s ease}
   .card:hover{border-color:var(--accent);transform:translateY(-3px)}
-  .card-media{
-    position:relative;
-    aspect-ratio:16/9;
-    background:var(--panel-2);
-    display:flex;align-items:center;justify-content:center;
-    border-bottom:1px solid var(--line);
-  }
+  .card-media{position:relative;aspect-ratio:16/9;background:var(--panel-2);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+  .card-media img{width:100%;height:100%;object-fit:cover;display:block}
   .card-media iframe{width:100%;height:100%;border:0;display:block}
-  /* Placeholder shown until you paste a real video/image */
-  .media-placeholder{
-    text-align:center;color:var(--muted);font-size:13px;padding:20px;line-height:1.5;
-  }
-  .media-placeholder .dot{
-    font-family:var(--display);font-size:11px;letter-spacing:.1em;
-    color:var(--accent-warm);display:block;margin-bottom:8px;font-weight:600;
-  }
+  .media-placeholder{text-align:center;color:var(--muted);font-size:13px;padding:20px;line-height:1.5}
+  .media-placeholder .dot{font-family:var(--display);font-size:11px;letter-spacing:.1em;color:var(--accent-warm);display:block;margin-bottom:8px;font-weight:600}
   .card-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
-  .card-tag{
-    font-family:var(--display);font-size:12px;letter-spacing:.06em;
-    color:var(--accent);font-weight:600;margin-bottom:10px;
-  }
+  .card-tag{font-family:var(--display);font-size:12px;letter-spacing:.06em;color:var(--accent);font-weight:600;margin-bottom:10px}
   .card-body h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:10px}
   .card-body p{color:var(--muted);font-size:15px;flex:1;margin-bottom:16px}
-  .card-stat{
-    font-family:var(--display);font-size:14px;font-weight:600;
-    color:var(--accent-warm);margin-bottom:16px;
-  }
+  .card-stat{font-family:var(--display);font-size:14px;font-weight:600;color:var(--accent-warm);margin-bottom:16px}
   .card-links{display:flex;gap:10px;flex-wrap:wrap}
-  .chip{
-    font-size:13px;font-weight:600;padding:8px 14px;border-radius:8px;
-    border:1px solid var(--line);color:var(--muted);transition:all .15s ease;
-  }
+  .chip{font-size:13px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line);color:var(--muted);transition:all .15s ease}
   .chip:hover{border-color:var(--accent);color:var(--ink)}
+  .chip.disabled{opacity:.4;pointer-events:none}
 
-  /* ---------- EXPERIENCE ---------- */
-  .exp-list{display:flex;flex-direction:column;gap:0}
-  .exp{
-    display:grid;grid-template-columns:200px 1fr;gap:30px;
-    padding:28px 0;border-top:1px solid var(--line);
-  }
+  .exp-list{display:flex;flex-direction:column}
+  .exp{display:grid;grid-template-columns:200px 1fr;gap:30px;padding:28px 0;border-top:1px solid var(--line)}
   .exp:last-child{border-bottom:1px solid var(--line)}
   .exp-meta .co{font-family:var(--display);font-weight:700;font-size:17px}
   .exp-meta .yr{color:var(--muted);font-size:14px;margin-top:4px}
   .exp-body .role{font-weight:600;font-size:16px;margin-bottom:8px}
   .exp-body p{color:var(--muted);font-size:15px}
+  .exp-body .demo{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent)}
 
-  /* ---------- SKILLS ---------- */
   .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .skill-block{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
   .skill-block h4{font-family:var(--display);font-size:15px;color:var(--accent);margin-bottom:12px;font-weight:600}
   .skill-block p{font-size:14px;color:var(--muted)}
 
-  /* ---------- CONTACT ---------- */
-  .contact{
-    text-align:center;padding:90px 0;border-top:1px solid var(--line);
-    background:linear-gradient(180deg,transparent,rgba(77,212,196,.04));
-  }
+  .contact{text-align:center;padding:90px 0;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(77,212,196,.04))}
   .contact h2{font-family:var(--display);font-size:clamp(28px,5vw,44px);font-weight:700;margin-bottom:18px;letter-spacing:-.02em}
   .contact p{color:var(--muted);margin-bottom:32px}
   .contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
@@ -200,26 +96,23 @@
     .skill-grid{grid-template-columns:1fr}
     .hero{padding:80px 0 50px}
   }
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}.panel.active{animation:none}}
 </style>
 </head>
 <body>
 
-<!-- ================= HERO ================= -->
 <header class="hero">
   <div class="wrap">
     <div class="hero-role">SENIOR UNITY / VR DEVELOPER</div>
     <h1>I build VR games people actually finish.</h1>
     <p>8+ years in Unity and C#. 10+ VR titles self-published on the Meta Quest Store, plus mobile hits past 100k installs. I own the full pipeline — concept, prototype, art direction, store-page optimization, release.</p>
     <div class="cta-row">
-      <!-- TODO: replace # with your Meta Quest developer page or itch.io -->
       <a class="btn btn-primary" href="#games">View my games</a>
       <a class="btn btn-ghost" href="mailto:hamedi.mohamadreza@gmail.com">Get in touch</a>
     </div>
   </div>
 </header>
 
-<!-- ================= STAT STRIP ================= -->
 <section class="stats">
   <div class="stat"><b>8+</b><span>Years in Unity</span></div>
   <div class="stat"><b>10+</b><span>VR titles shipped</span></div>
@@ -227,149 +120,249 @@
   <div class="stat"><b>3</b><span>Countries taught</span></div>
 </section>
 
-<!-- ================= GAMES ================= -->
 <section class="section" id="games">
   <div class="wrap">
     <div class="section-head">
-      <h2>Selected games</h2>
-      <p class="sub">Self-published on Meta Quest as a solo developer — certification, launch, and live updates handled independently.</p>
+      <h2>Selected work</h2>
+      <p class="sub">Filter by platform. Self-published on Meta Quest as a solo developer — certification, launch and live updates handled independently.</p>
     </div>
 
-    <div class="games">
-
-      <!-- ============ GAME 1 ============ -->
-      <article class="card">
-        <div class="card-media">
-          <!-- TODO: paste YouTube embed here. Example:
-               <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-               Delete the placeholder div below once you add it. -->
-          <div class="media-placeholder">
-            <span class="dot">VIDEO / IMAGE</span>
-            Paste YouTube embed or screenshot here
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">VR HORROR · META QUEST</div>
-          <h3>Between Floors</h3>
-          <p>Anomaly-spotting horror set in an elevator. Spot what's wrong before the doors open.</p>
-          <div class="card-stat"><!-- TODO: add a stat, e.g. "12k wishlists" -->[ add stat ]</div>
-          <div class="card-links">
-            <!-- TODO: paste real links -->
-            <a class="chip" href="#">Meta Quest ↗</a>
-            <a class="chip" href="#">Gameplay video ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ GAME 2 ============ -->
-      <article class="card">
-        <div class="card-media">
-          <div class="media-placeholder">
-            <span class="dot">VIDEO / IMAGE</span>
-            Paste YouTube embed or screenshot here
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">VR · META QUEST</div>
-          <h3>Prison Sim</h3>
-          <p>Survive and scheme inside a VR prison. My strongest-validated concept by wishlist conversion.</p>
-          <div class="card-stat">[ add stat ]</div>
-          <div class="card-links">
-            <a class="chip" href="#">Meta Quest ↗</a>
-            <a class="chip" href="#">Gameplay video ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ GAME 3 ============ -->
-      <article class="card">
-        <div class="card-media">
-          <div class="media-placeholder">
-            <span class="dot">VIDEO / IMAGE</span>
-            Paste YouTube embed or screenshot here
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">VR ACTION · META QUEST</div>
-          <h3>Outlaws Assassin</h3>
-          <p>A western-flavored VR action game. [ short one-line description ]</p>
-          <div class="card-stat">[ add stat ]</div>
-          <div class="card-links">
-            <a class="chip" href="#">Meta Quest ↗</a>
-            <a class="chip" href="#">Gameplay video ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ GAME 4 ============ -->
-      <article class="card">
-        <div class="card-media">
-          <div class="media-placeholder">
-            <span class="dot">VIDEO / IMAGE</span>
-            Paste YouTube embed or screenshot here
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">MOBILE · 4 YEARS LIVE</div>
-          <h3>Backgammon</h3>
-          <p>Classic backgammon grown to ~200k users, sustaining revenue through ad monetization for four years.</p>
-          <div class="card-stat">~200,000 users</div>
-          <div class="card-links">
-            <a class="chip" href="#">Store link ↗</a>
-            <a class="chip" href="#">Video ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ DUPLICATE THIS BLOCK FOR MORE GAMES ============
-      <article class="card">
-        <div class="card-media">
-          <div class="media-placeholder">
-            <span class="dot">VIDEO / IMAGE</span>
-            Paste YouTube embed or screenshot here
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">TAG · PLATFORM</div>
-          <h3>Game Name</h3>
-          <p>One-line description.</p>
-          <div class="card-stat">[ add stat ]</div>
-          <div class="card-links">
-            <a class="chip" href="#">Store ↗</a>
-            <a class="chip" href="#">Video ↗</a>
-          </div>
-        </div>
-      </article>
-      ============================================================ -->
-
+    <div class="tabs">
+      <button class="tab active" data-target="vr">VR — Meta Quest<span class="count">8</span></button>
+      <button class="tab" data-target="mobile">Mobile<span class="count">2</span></button>
+      <button class="tab" data-target="pc">PC &amp; Multiplayer<span class="count">2</span></button>
     </div>
+
+    <!-- ====================== VR PANEL ====================== -->
+    <div class="panel active" id="vr">
+      <div class="games">
+
+        <article class="card">
+          <div class="card-media">
+            <!-- TODO IMAGE: <img src="images/between-floors.jpg" alt="Between Floors"> -->
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/between-floors.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">VR HORROR · META QUEST</div>
+            <h3>Between Floors</h3>
+            <p>Anomaly-spotting horror set in an elevator. Spot what's wrong before the doors open.</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/between-floors/1027973489614067/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/prison-sim.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">VR · META QUEST</div>
+            <h3>Prison Sim</h3>
+            <p>Survive and scheme inside a VR prison. My strongest-validated concept by wishlist conversion.</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/prison-sim/25981753794850303/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/outlaws-assassin.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">VR ACTION · META QUEST</div>
+            <h3>Outlaws Assassin</h3>
+            <p>A western-flavored VR action game.</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/outlaws-assassin/28326306157013728/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/velvet-trip.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">VR · META QUEST</div>
+            <h3>Velvet Trip</h3>
+            <p>[ one-line description ]</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/velvet-trip/24377366371880064/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/clowns-game.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">VR · META QUEST</div>
+            <h3>Clown's Game</h3>
+            <p>[ one-line description ]</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/clowns-game/25590894467249112/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/fishing-in-vr.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">VR · META QUEST</div>
+            <h3>Fishing in VR</h3>
+            <p>[ one-line description ]</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/fishing-in-vr/8573485719428887/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/night-fishing.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">VR · META QUEST</div>
+            <h3>Night Fishing</h3>
+            <p>[ one-line description ]</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/night-fishing/1048740787537337/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/living-room-fishing.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">MR · META QUEST</div>
+            <h3>Living Room Fishing</h3>
+            <p>[ one-line description ]</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.meta.com/en-gb/experiences/living-room-fishing/1084711263940289/" target="_blank" rel="noopener">Meta Quest ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ====================== MOBILE PANEL ====================== -->
+    <div class="panel" id="mobile">
+      <div class="games">
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/backgammon.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">MOBILE · 4 YEARS LIVE</div>
+            <h3>Backgammon</h3>
+            <p>Classic backgammon grown to ~200k users, sustaining revenue through ad monetization for four years.</p>
+            <div class="card-stat">~200,000 users</div>
+            <div class="card-links">
+              <a class="chip" href="https://apps.apple.com/us/app/wooden-backgammon/id6504090273?platform=iphone" target="_blank" rel="noopener">App Store ↗</a>
+              <!-- TODO VIDEO: one of your YouTube links is the backgammon trailer — paste it here -->
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/gholmol.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">MOBILE</div>
+            <h3>Gholmol</h3>
+            <p>[ one-line description ]</p>
+            <div class="card-links">
+              <a class="chip" href="https://cafebazaar.ir/app/com.elegantuniverse.multitouch?l=en" target="_blank" rel="noopener">Cafe Bazaar ↗</a>
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ====================== PC & MULTIPLAYER PANEL ====================== -->
+    <div class="panel" id="pc">
+      <div class="games">
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/hoomeez.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">PC &amp; MOBILE · MULTIPLAYER</div>
+            <h3>Hoomeez</h3>
+            <p>3D real-time multiplayer game (Sourena Games / Zula). Client and server-side Unity work in a production team.</p>
+            <div class="card-links">
+              <!-- TODO VIDEO: paste the matching YouTube link if you have one -->
+              <a class="chip disabled" href="#">Gameplay video ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <div class="media-placeholder"><span class="dot">ADD IMAGE</span>images/neoki-metaverse.jpg</div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">CROSS-PLATFORM · METAVERSE</div>
+            <h3>Neoki Metaverse</h3>
+            <p>Cross-platform metaverse (Android, iOS, WebGL) from one Unity codebase. PUN2 networking, Vivox voice, ReadyPlayerMe avatars — 10 concurrent players per room.</p>
+            <div class="card-links">
+              <a class="chip" href="https://www.linkedin.com/posts/mohammadreza-hamedi_metaverse-unity3d-gamedevelopment-activity-7044993569329164290-zHiL/" target="_blank" rel="noopener">Demo ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
+<!-- ============ UNMATCHED VIDEOS (for you only — not shown on page) ============
+     These YouTube links were in your CV but I couldn't tell which game each belongs to.
+     Paste each into the right card's "Gameplay video" chip: set the href and remove class "disabled".
+       https://www.youtube.com/watch?v=iKo09vrse94
+       https://www.youtube.com/watch?v=t1FmqER4ZLw
+       https://www.youtube.com/watch?v=Nv2N45yp01Q
+       https://www.youtube.com/watch?v=4bLg53z9pIs   (long video, t=3843s — maybe instructor/metaverse showcase)
+============================================================================ -->
+
 <section class="section" style="background:var(--panel)">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Where I've worked</h2>
-    </div>
+    <div class="section-head"><h2>Where I've worked</h2></div>
     <div class="exp-list">
 
       <div class="exp">
-        <div class="exp-meta">
-          <div class="co">B.O Investment 2016</div>
-          <div class="yr">2025 – Present · Canada (Remote)</div>
-        </div>
+        <div class="exp-meta"><div class="co">B.O Investment 2016</div><div class="yr">2025 – Present · Canada (Remote)</div></div>
         <div class="exp-body">
           <div class="role">Unity Developer (Freelance)</div>
-          <p>Building a VR app combining real-time AI conversation with an embodied avatar — Reallusion avatars with automated lip-sync, Google Street View inside VR, TTS via Google & ElevenLabs, and in-headset heart-rate biometric feedback.</p>
+          <p>Building a VR app combining real-time AI conversation with an embodied avatar — Reallusion avatars with automated lip-sync, Google Street View inside VR, TTS via Google &amp; ElevenLabs, and in-headset heart-rate biometric feedback.</p>
         </div>
       </div>
 
       <div class="exp">
-        <div class="exp-meta">
-          <div class="co">JB Studio</div>
-          <div class="yr">2018 – Present · Independent</div>
-        </div>
+        <div class="exp-meta"><div class="co">JB Studio</div><div class="yr">2018 – Present · Independent</div></div>
         <div class="exp-body">
           <div class="role">Indie Game Developer</div>
           <p>Published VR games on Meta Quest and mobile titles on multiple stores. Owned the full pipeline from concept validation to live updates. Grew a backgammon title to ~200k users.</p>
@@ -377,21 +370,16 @@
       </div>
 
       <div class="exp">
-        <div class="exp-meta">
-          <div class="co">Circuit Stream</div>
-          <div class="yr">2022 – 2024 · Canada (Remote)</div>
-        </div>
+        <div class="exp-meta"><div class="co">Circuit Stream</div><div class="yr">2022 – 2024 · Canada (Remote)</div></div>
         <div class="exp-body">
-          <div class="role">XR & Bootcamp Instructor</div>
+          <div class="role">XR &amp; Bootcamp Instructor</div>
           <p>Mentored 50+ students across Canada, the US and Australia through VR/AR and Unity bootcamps, taking them from first principles to shipped portfolio projects.</p>
+          <a class="demo" href="https://github.com/mohammadrezahamedi/MRTKPassThrough" target="_blank" rel="noopener">MRTK Passthrough sample ↗</a>
         </div>
       </div>
 
       <div class="exp">
-        <div class="exp-meta">
-          <div class="co">Neoki</div>
-          <div class="yr">2022 – 2023 · Sweden (Remote)</div>
-        </div>
+        <div class="exp-meta"><div class="co">Neoki</div><div class="yr">2022 – 2023 · Sweden (Remote)</div></div>
         <div class="exp-body">
           <div class="role">Senior Unity Developer (Contract)</div>
           <p>Built a cross-platform metaverse shipping to Android, iOS and WebGL from one Unity codebase. Networked with PUN2, spatial voice with Vivox, avatars with ReadyPlayerMe — 10 concurrent players per room with stable real-time sync.</p>
@@ -399,10 +387,7 @@
       </div>
 
       <div class="exp">
-        <div class="exp-meta">
-          <div class="co">Sourena Games (Zula)</div>
-          <div class="yr">2021 – 2022</div>
-        </div>
+        <div class="exp-meta"><div class="co">Sourena Games (Zula)</div><div class="yr">2021 – 2022</div></div>
         <div class="exp-body">
           <div class="role">Unity Developer</div>
           <p>Contributed to Hoomeez, a 3D real-time multiplayer game for PC and mobile — client and server-side Unity development within a production team.</p>
@@ -413,40 +398,20 @@
   </div>
 </section>
 
-<!-- ================= SKILLS ================= -->
 <section class="section">
   <div class="wrap">
     <div class="section-head"><h2>What I work with</h2></div>
     <div class="skill-grid">
-      <div class="skill-block">
-        <h4>VR / XR</h4>
-        <p>OpenXR, Oculus SDK, Meta Quest publishing, MRTK, passthrough & mixed reality, VR interaction & comfort design.</p>
-      </div>
-      <div class="skill-block">
-        <h4>Programming</h4>
-        <p>C#, SOLID, dependency injection, design patterns (state machine, observer, singleton), decoupled maintainable architecture.</p>
-      </div>
-      <div class="skill-block">
-        <h4>Multiplayer</h4>
-        <p>PUN2, Mirror, LLAPI / Unity Transport, Vivox voice chat, ReadyPlayerMe.</p>
-      </div>
-      <div class="skill-block">
-        <h4>Unity</h4>
-        <p>Engine workflow, asset management, build pipelines, performance profiling for mobile-class hardware, testing & QA.</p>
-      </div>
-      <div class="skill-block">
-        <h4>Game Design</h4>
-        <p>GDD authoring, mechanics, level design, player experience, narrative design, store-page optimization.</p>
-      </div>
-      <div class="skill-block">
-        <h4>Tools</h4>
-        <p>Git, Jira, Trello, Miro, Confluence, Slack, Figma.</p>
-      </div>
+      <div class="skill-block"><h4>VR / XR</h4><p>OpenXR, Oculus SDK, Meta Quest publishing, MRTK, passthrough &amp; mixed reality, VR interaction &amp; comfort design.</p></div>
+      <div class="skill-block"><h4>Programming</h4><p>C#, SOLID, dependency injection, design patterns (state machine, observer, singleton), decoupled maintainable architecture.</p></div>
+      <div class="skill-block"><h4>Multiplayer</h4><p>PUN2, Mirror, LLAPI / Unity Transport, Vivox voice chat, ReadyPlayerMe.</p></div>
+      <div class="skill-block"><h4>Unity</h4><p>Engine workflow, asset management, build pipelines, performance profiling for mobile-class hardware, testing &amp; QA.</p></div>
+      <div class="skill-block"><h4>Game Design</h4><p>GDD authoring, mechanics, level design, player experience, narrative design, store-page optimization.</p></div>
+      <div class="skill-block"><h4>Tools</h4><p>Git, Jira, Trello, Miro, Confluence, Slack, Figma.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Let's build something</h2>
@@ -459,14 +424,26 @@
   </div>
 </section>
 
-<footer>
-  © <span id="yr"></span> Mohammad Reza Hamedi · Built with plain HTML on GitHub Pages
-</footer>
+<footer>© <span id="yr"></span> Mohammad Reza Hamedi · Built with plain HTML on GitHub Pages</footer>
 
 <script>
-  // Auto-update footer year
   document.getElementById('yr').textContent = new Date().getFullYear();
-  console.log('Portfolio loaded. TODO markers left in the HTML for links, videos and stats.');
+
+  // Platform tab switching
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
+      console.log('Switching to platform panel:', target);
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  console.log('Portfolio loaded. Add images to /images/ folder and paste video links where marked TODO.');
 </script>
 
 </body>
